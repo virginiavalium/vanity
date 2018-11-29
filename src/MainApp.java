@@ -2,13 +2,11 @@ import processing.core.PApplet;
 import processing.data.FloatDict;
 import vanity.core.Palette;
 import vanity.core.Texturizer;
+import vanity.core.VanityApplet;
 
 import java.util.HashMap;
 
-public class MainApp extends PApplet {
-  HashMap<String, Palette> palettes;
-  Palette palette;
-  Texturizer texturizer;
+public class MainApp extends VanityApplet {
 
   public static void main (String[] args) {
     PApplet.main("MainApp", args);
@@ -19,23 +17,21 @@ public class MainApp extends PApplet {
   }
 
   public void init () {
-    final String paletteName = "test";
+    initialize();
 
-    palettes = new HashMap<>();
-    palettes.put("test", new Palette(this, "256eff-46237a-3ddc97-fcfcfc-ff495c"));
-
-    palette = palettes.get(paletteName);
-
-    FloatDict texturizerSettings = new FloatDict();
-
-    texturizer = new Texturizer(this, Texturizer.FIBERS, texturizerSettings);
+    addPalette("test","256eff-46237a-3ddc97-fcfcfc-ff495c");
+    // choosePalette("test"); // Not necessary since we only have one, it sets automatically
+    addTexture(Texturizer.FIBERS);
+    addTextureSetting(Texturizer.FIBERS, "alpha", 40);
   }
 
   public void setup() {
     init();
+
     background(0);
-    palette.draw();
-    texturizer.texturize();
+    debugPalette();
+    texturize();
+    save();
   }
 
   public void draw () {

@@ -5,13 +5,9 @@ import processing.core.PApplet;
 import java.util.Arrays;
 
 public class Palette extends ProcessingEntity {
-  public enum Harmony { Monochromatic, Analogous, Complementary, Triads }
+  public enum Harmony { Monochromatic, Analogous, Complementary, Triads };
 
-  ;
-
-  public enum LerpMode { Linear, Log, Exp }
-
-  ;
+  public enum LerpMode { Linear, Log, Exp };
 
   private Harmony harmony = Harmony.Monochromatic;
   private LerpMode lerpMode = LerpMode.Linear;
@@ -137,7 +133,6 @@ public class Palette extends ProcessingEntity {
   }
 
 
-
   public int getColorDiscrete (float v) { return getColorDiscrete(v, lerpMode); }
 
   public int getColorDiscrete (float v, int size) { return getColorDiscrete(v, size, lerpMode); }
@@ -202,7 +197,9 @@ public class Palette extends ProcessingEntity {
    * Debug Methods
    */
 
-  public void draw () {
+  public void draw () { draw(40); }
+
+  public void draw (float height) {
     context.pushStyle();
     context.noFill();
     context.strokeWeight(1);

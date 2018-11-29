@@ -13,6 +13,7 @@ public class Texturizer extends ProcessingBehaviour {
 
   private int mode = 0;
 
+  private static final String[] MODES = new String[] { "grain", "clouds", "stains", "fibers" };
 
   public static final int GRAIN  = 1 << 0;
   public static final int CLOUDS = 1 << 1;
@@ -40,7 +41,6 @@ public class Texturizer extends ProcessingBehaviour {
 
     pg = context.createGraphics(context.width, context.height);
   }
-
 
   public Texturizer(PApplet context, FloatDict settings) {
     super(context);
@@ -72,6 +72,7 @@ public class Texturizer extends ProcessingBehaviour {
     pg.endDraw();
     context.image(pg, 0, 0);
   }
+
 
   private void texturizeGrain () {
     float alpha   = settings.get("grain_alpha", DEFAULT_ALPHA);
@@ -107,16 +108,16 @@ public class Texturizer extends ProcessingBehaviour {
     float count     = settings.get("stains_count", 5f);
     float remaining = settings.get("stains_count", 5f);
     float scale     = settings.get("stains_scale", 20f);
-    float minParts  = settings.get("stains_min_parts", 3f);
-    float maxParts  = settings.get("stains_max_parts", 8f);
+    float minParts  = settings.get("stains_minparts", 3f);
+    float maxParts  = settings.get("stains_maxparts", 8f);
     float grayscale = settings.get("stains_grayscale", 0f);
 
-    float maxVertices  = settings.get("stains_max_verts", 8f);
-    float minVertices  = settings.get("stains_min_verts", 5f);
+    float maxVertices  = settings.get("stains_maxverts", 8f);
+    float minVertices  = settings.get("stains_minverts", 5f);
 
-    float padding = settings.get("stains_padding_x", pg.height / 10);
+    float padding = settings.get("stains_paddingx", pg.height / 10);
 
-    float minDistance = settings.get("stains_min_distance", pg.height / 20);
+    float minDistance = settings.get("stains_mindistance", pg.height / 20);
 
     float lastX = 0, lastY = 0;
 
@@ -228,5 +229,22 @@ public class Texturizer extends ProcessingBehaviour {
 
   private boolean fibers() {
     return (mode & FIBERS) == FIBERS;
+  }
+
+
+  public void addMode(int mode) {
+    this.mode |= mode;
+  }
+
+  public void addSetting (int mode, String setting, float value) {
+    settings.add(String.join(MODES[modeToIndex(mode)], "_", setting), value);
+  }
+
+  public void removeSetting (int mode, String setting) {
+    settings.remove(String.join(MODES[modeToIndex(mode)], "_", setting));
+  }
+
+  private int modeToIndex (int mode) {
+    return (int) Math.round(Math.log(mode) / Math.log(2));
   }
 }
