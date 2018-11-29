@@ -13,7 +13,6 @@ public class MainApp extends PApplet {
 
   public void settings () {
     size(800, 600);
-
   }
 
   public void init () {
