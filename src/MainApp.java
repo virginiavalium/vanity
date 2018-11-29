@@ -28,7 +28,7 @@ public class MainApp extends PApplet {
 
     FloatDict texturizerSettings = new FloatDict();
 
-    texturizer = new Texturizer(this, Texturizer.STAINS, texturizerSettings);
+    texturizer = new Texturizer(this, Texturizer.FIBERS, texturizerSettings);
   }
 
   public void setup() {

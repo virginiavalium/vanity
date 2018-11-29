@@ -102,6 +102,7 @@ public class Texturizer extends ProcessingBehaviour {
   }
 
   private void texturizeStains () {
+    // TODO review default values
     float alpha     = settings.get("stains_alpha", DEFAULT_ALPHA);
     float count     = settings.get("stains_count", 5f);
     float remaining = settings.get("stains_count", 5f);
@@ -174,12 +175,12 @@ public class Texturizer extends ProcessingBehaviour {
   }
 
   private void texturizeFibers () {
-    float alpha   = settings.get("fibers_alpha");
-    float minStep = settings.get("fibers_minstep");
-    float maxStep = settings.get("fibers_maxstep");
-    float minSize = settings.get("fibers_minsize");
-    float maxSize = settings.get("fibers_maxsize");
-    float scale   = settings.get("fibers_scale");
+    float alpha   = settings.get("fibers_alpha", DEFAULT_ALPHA);
+    float minStep = settings.get("fibers_minstep", 1);
+    float maxStep = settings.get("fibers_maxstep", 10);
+    float minSize = settings.get("fibers_minsize", 5);
+    float maxSize = settings.get("fibers_maxsize", 50);
+    float scale   = settings.get("fibers_scale", 200);
 
     pg.strokeWeight(.8f);
 
