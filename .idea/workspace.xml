@@ -2,21 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b9fa7183-0415-4c8f-a605-8f73e6cbc6eb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Vanity/vanity/core/Palette$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Vanity/vanity/core/Palette$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Vanity/vanity/core/Palette$LerpMode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Vanity/vanity/core/Palette$LerpMode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Vanity/vanity/behaviours/LifeBehaviour.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Vanity/vanity/behaviours/LifeBehaviour.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Vanity/vanity/behaviours/MovementBehaviour.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Vanity/vanity/behaviours/MovementBehaviour.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Vanity/vanity/components/Transform.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Vanity/vanity/components/Transform.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Vanity/vanity/components/Transform2D.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Vanity/vanity/components/Transform2D.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Vanity/vanity/components/Transform3D.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Vanity/vanity/components/Transform3D.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Vanity/vanity/core/Palette.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Vanity/vanity/core/Palette.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vanity/behaviours/LifeBehaviour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vanity/behaviours/LifeBehaviour.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vanity/behaviours/MovementBehaviour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vanity/behaviours/MovementBehaviour.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vanity/components/Transform.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vanity/components/Transform.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vanity/components/Transform2D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vanity/components/Transform2D.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vanity/components/Transform3D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vanity/components/Transform3D.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vanity/core/Palette.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vanity/core/Palette.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vanity/core/ProcessingBehaviour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vanity/core/VanityBehaviour.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vanity/core/ProcessingComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vanity/core/VanityComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vanity/core/ProcessingEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vanity/core/VanityEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vanity/core/Saver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vanity/core/Saver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Vanity/vanity/core/ProcessingBehaviour.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Vanity/vanity/core/ProcessingComponent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Vanity/vanity/core/ProcessingEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/vanity/core/Texturizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vanity/core/Texturizer.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -28,121 +24,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/vanity/behaviours/MovementBehaviour.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/vanity/behaviours/MovementBehaviour2D.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/vanity/components/Transform3D.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
-              <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/vanity/core/Utils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/vanity/core/Color.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/vanity/Dancer.java">
+        <entry file="file://$PROJECT_DIR$/src/MainApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="15" column="46" lean-forward="true" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/vanity/core/VanityApplet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-765">
-              <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+            <state relative-caret-position="255">
+              <caret line="31" column="3" selection-start-line="31" selection-start-column="3" selection-end-line="31" selection-end-column="3" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#574#575#0" expanded="true" />
-                <element signature="e#600#601#0" expanded="true" />
-                <element signature="e#570#571#0" expanded="true" />
-                <element signature="e#596#597#0" expanded="true" />
-                <element signature="e#659#660#0" expanded="true" />
-                <element signature="e#676#677#0" expanded="true" />
-                <element signature="e#608#609#0" expanded="true" />
-                <element signature="e#641#642#0" expanded="true" />
-                <element signature="e#859#860#0" expanded="true" />
-                <element signature="e#885#886#0" expanded="true" />
-                <element signature="e#896#897#0" expanded="true" />
-                <element signature="e#940#941#0" expanded="true" />
-                <element signature="e#865#866#0" expanded="true" />
-                <element signature="e#895#896#0" expanded="true" />
-                <element signature="e#972#973#0" expanded="true" />
-                <element signature="e#1025#1026#0" expanded="true" />
-                <element signature="e#1365#1366#0" expanded="true" />
-                <element signature="e#1387#1388#0" expanded="true" />
-                <element signature="e#1414#1415#0" expanded="true" />
-                <element signature="e#1436#1437#0" expanded="true" />
-                <element signature="e#1512#1513#0" expanded="true" />
-                <element signature="e#1534#1535#0" expanded="true" />
+                <element signature="e#341#342#0" expanded="true" />
+                <element signature="e#365#366#0" expanded="true" />
+                <element signature="e#910#911#0" expanded="true" />
+                <element signature="e#946#947#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/vanity/core/Saver.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="21">
-              <caret line="6" column="22" lean-forward="true" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#359#360#0" expanded="true" />
-                <element signature="e#383#384#0" expanded="true" />
-                <element signature="e#903#904#0" expanded="true" />
-                <element signature="e#962#963#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/vanity/core/VanityBehaviour.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
             </state>
           </provider>
         </entry>
@@ -150,22 +42,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/vanity/core/Texturizer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="241" lean-forward="true" selection-start-line="241" selection-end-line="241" />
+            <state relative-caret-position="108">
+              <caret line="148" column="51" selection-start-line="148" selection-start-column="51" selection-end-line="148" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#5392#5393#0" expanded="true" />
-                <element signature="e#5432#5433#0" expanded="true" />
-                <element signature="e#5462#5463#0" expanded="true" />
-                <element signature="e#5504#5505#0" expanded="true" />
-                <element signature="e#5534#5535#0" expanded="true" />
-                <element signature="e#5576#5577#0" expanded="true" />
-                <element signature="e#5606#5607#0" expanded="true" />
-                <element signature="e#5648#5649#0" expanded="true" />
-                <element signature="e#7175#7176#0" expanded="true" />
-                <element signature="e#7208#7209#0" expanded="true" />
-                <element signature="e#7595#7596#0" expanded="true" />
-                <element signature="e#7632#7633#0" expanded="true" />
+                <element signature="e#7536#7537#0" expanded="true" />
+                <element signature="e#7576#7577#0" expanded="true" />
+                <element signature="e#7606#7607#0" expanded="true" />
+                <element signature="e#7648#7649#0" expanded="true" />
+                <element signature="e#7678#7679#0" expanded="true" />
+                <element signature="e#7720#7721#0" expanded="true" />
+                <element signature="e#7750#7751#0" expanded="true" />
+                <element signature="e#7792#7793#0" expanded="true" />
+                <element signature="e#7828#7829#0" expanded="true" />
+                <element signature="e#7855#7856#0" expanded="true" />
+                <element signature="e#8181#8182#0" expanded="true" />
+                <element signature="e#8244#8245#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -189,8 +81,6 @@
         <option value="$PROJECT_DIR$/src/vanity/core/Utils.java" />
         <option value="$PROJECT_DIR$/src/vanity/core/Texture.java" />
         <option value="$PROJECT_DIR$/src/vanity/core/Palette.java" />
-        <option value="$PROJECT_DIR$/src/MainApp.java" />
-        <option value="$PROJECT_DIR$/src/vanity/core/Texturizer.java" />
         <option value="$PROJECT_DIR$/src/vanity/core/VanityApplet.java" />
         <option value="$PROJECT_DIR$/src/vanity/core/Saver.java" />
         <option value="$PROJECT_DIR$/src/vanity/core/ProcessingBehaviour.java" />
@@ -199,6 +89,8 @@
         <option value="$PROJECT_DIR$/src/vanity/core/VanityEntity.java" />
         <option value="$PROJECT_DIR$/src/vanity/behaviours/MovementBehaviour.java" />
         <option value="$PROJECT_DIR$/src/vanity/components/Transform3D.java" />
+        <option value="$PROJECT_DIR$/src/vanity/core/Texturizer.java" />
+        <option value="$PROJECT_DIR$/src/MainApp.java" />
       </list>
     </option>
   </component>
@@ -239,27 +131,6 @@
             </path>
             <path>
               <item name="Vanity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Vanity" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="vanity" type="462c0819:PsiDirectoryNode" />
-              <item name="behaviours" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Vanity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Vanity" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="vanity" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Vanity" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Vanity" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="vanity" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Vanity" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
@@ -275,6 +146,7 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RunDashboard">
@@ -351,14 +223,21 @@
       <option name="project" value="LOCAL" />
       <updated>1543524212727</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Rename core classes with &quot;Vanity&quot; prefix">
+      <created>1543524533286</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1543524533286</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22692889" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22692889" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -366,7 +245,7 @@
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32850242" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32850242" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32850242" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3993559" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -374,7 +253,7 @@
       <window_info anchor="bottom" id="Run Dashboard" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="10" visible="true" weight="0.32850242" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32850242" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32850242" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -414,16 +293,17 @@
     <MESSAGE value="Integrate Texturizer (only &quot;Fibers&quot; texture pending revision)" />
     <MESSAGE value="Review Texturizer's &quot;Fibers&quot; method" />
     <MESSAGE value="New sketch base class VanityApplet and its components working" />
-    <option name="LAST_COMMIT_MESSAGE" value="New sketch base class VanityApplet and its components working" />
+    <MESSAGE value="Rename core classes with &quot;Vanity&quot; prefix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rename core classes with &quot;Vanity&quot; prefix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/MainApp.java</url>
-          <line>32</line>
+          <url>file://$PROJECT_DIR$/src/vanity/core/Texturizer.java</url>
+          <line>150</line>
           <properties />
-          <option name="timeStamp" value="19" />
+          <option name="timeStamp" value="23" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -454,17 +334,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="935">
           <caret line="199" selection-start-line="199" selection-end-line="199" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
-          <folding>
-            <element signature="e#341#342#0" expanded="true" />
-            <element signature="e#365#366#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -503,28 +372,6 @@
             <element signature="e#383#384#0" expanded="true" />
             <element signature="e#903#904#0" expanded="true" />
             <element signature="e#962#963#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vanity/core/Texturizer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="241" lean-forward="true" selection-start-line="241" selection-end-line="241" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#5392#5393#0" expanded="true" />
-            <element signature="e#5432#5433#0" expanded="true" />
-            <element signature="e#5462#5463#0" expanded="true" />
-            <element signature="e#5504#5505#0" expanded="true" />
-            <element signature="e#5534#5535#0" expanded="true" />
-            <element signature="e#5576#5577#0" expanded="true" />
-            <element signature="e#5606#5607#0" expanded="true" />
-            <element signature="e#5648#5649#0" expanded="true" />
-            <element signature="e#7175#7176#0" expanded="true" />
-            <element signature="e#7208#7209#0" expanded="true" />
-            <element signature="e#7595#7596#0" expanded="true" />
-            <element signature="e#7632#7633#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -604,8 +451,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/vanity/Dancer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="15" column="46" lean-forward="true" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
+        <state relative-caret-position="187">
+          <caret line="18" column="3" lean-forward="true" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vanity/core/Texturizer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="148" column="51" selection-start-line="148" selection-start-column="51" selection-end-line="148" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#7536#7537#0" expanded="true" />
+            <element signature="e#7576#7577#0" expanded="true" />
+            <element signature="e#7606#7607#0" expanded="true" />
+            <element signature="e#7648#7649#0" expanded="true" />
+            <element signature="e#7678#7679#0" expanded="true" />
+            <element signature="e#7720#7721#0" expanded="true" />
+            <element signature="e#7750#7751#0" expanded="true" />
+            <element signature="e#7792#7793#0" expanded="true" />
+            <element signature="e#7828#7829#0" expanded="true" />
+            <element signature="e#7855#7856#0" expanded="true" />
+            <element signature="e#8181#8182#0" expanded="true" />
+            <element signature="e#8244#8245#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="31" column="3" selection-start-line="31" selection-start-column="3" selection-end-line="31" selection-end-column="3" />
+          <folding>
+            <element signature="e#341#342#0" expanded="true" />
+            <element signature="e#365#366#0" expanded="true" />
+            <element signature="e#910#911#0" expanded="true" />
+            <element signature="e#946#947#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

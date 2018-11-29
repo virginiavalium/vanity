@@ -2,7 +2,11 @@ package vanity.core;
 
 import processing.core.PApplet;
 import processing.core.PGraphics;
+import processing.core.PVector;
 import processing.data.FloatDict;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 import static processing.core.PConstants.TWO_PI;
 
@@ -21,7 +25,7 @@ public class Texturizer extends VanityBehaviour {
   public static final int FIBERS = 1 << 3;
 
   private static final float DEFAULT_ALPHA = 20.0f;
-  private static final int   DEFAULT_MODE = GRAIN | CLOUDS | STAINS | FIBERS;
+  private static final int   DEFAULT_MODE = 0;
 
 
   public Texturizer(PApplet context) {
@@ -103,69 +107,70 @@ public class Texturizer extends VanityBehaviour {
   }
 
   private void texturizeStains () {
-    // TODO review default values
     float alpha     = settings.get("stains_alpha", DEFAULT_ALPHA);
     float count     = settings.get("stains_count", 5f);
     float remaining = settings.get("stains_count", 5f);
-    float scale     = settings.get("stains_scale", 20f);
-    float minParts  = settings.get("stains_minparts", 3f);
-    float maxParts  = settings.get("stains_maxparts", 8f);
+    float scale     = settings.get("stains_scale", pg.height / 5f);
+    float minStainsPerGroup  = settings.get("stains_minparts", 1f);
+    float maxStainsPerGroup  = settings.get("stains_maxparts", 5f);
     float grayscale = settings.get("stains_grayscale", 0f);
 
-    float maxVertices  = settings.get("stains_maxverts", 8f);
-    float minVertices  = settings.get("stains_minverts", 5f);
+    float minVertices  = settings.get("stains_minverts", 6f);
+    float maxVertices  = settings.get("stains_maxverts", 18f);
 
-    float padding = settings.get("stains_paddingx", pg.height / 10);
+    float padding = settings.get("stains_padding", pg.height / 50);
 
-    float minDistance = settings.get("stains_mindistance", pg.height / 20);
+    float minDistance = settings.get("stains_mindistance", pg.height / 10);
 
-    float lastX = 0, lastY = 0;
+    float randomness = settings.get("stains_randomness", 0.2f);
+
+    PVector lastGroupCenter = new PVector();
 
     pg.noStroke();
 
     while (remaining > 0) {
-      float x = pg.width  / 2 + context.random(0, pg.width  / 2 - padding);
-      float y = pg.height / 2 + context.random(0, pg.height / 2 - padding);
+      PVector groupCenter = new PVector(context.random(-pg.width  / 2 - padding, pg.width  / 2 - padding),
+                                        context.random(-pg.height / 2 - padding, pg.height / 2 - padding));
 
-      boolean distanceCondition = remaining == count || context.dist(lastX, lastY, x, y) > minDistance;
-      boolean positiveValue     = context.noise(x / pg.height, y / pg.height) > 0.5;
+      boolean firstStainGroup = remaining == count;
+      boolean distanceOk      = context.dist(lastGroupCenter.x, lastGroupCenter.y, groupCenter.x, groupCenter.y) > minDistance;
+      boolean positiveValue   = context.noise(groupCenter.x / pg.width, groupCenter.y / pg.height) > 0.5;
 
-      if (distanceCondition && positiveValue) {
-        lastX = x;
-        lastY = y;
+      if ((firstStainGroup || distanceOk) && positiveValue) {
+        lastGroupCenter = groupCenter.copy();
 
         pg.pushMatrix();
-        pg.translate(x, y);
+        pg.translate(pg.width / 2 + groupCenter.x, pg.height / 2 + groupCenter.y);
 
-        float parts = context.random(minParts, maxParts);
+        int stainsInGroup = (int) context.random(minStainsPerGroup, maxStainsPerGroup);
 
-        for (int j = 0; j < parts; j++) {
-          float size        = context.random(1, 3) * (j == 0 ? scale : scale / 5);
-          float mappedAlpha = context.map(size, 0, 30, context.min(alpha, DEFAULT_ALPHA), context.max(alpha, 64));
+        for (int stain = 0; stain < stainsInGroup; stain++) {
+          float size        = context.random(1, 3) * (stain == 0 ? scale : scale / 5);
+          float mappedAlpha = context.map(size, 1, scale * 3, 2, alpha);
 
-          float ix = context.randomGaussian() * size;
-          float iy = context.randomGaussian() * size;
+          int vertsNumber = (int) context.random(minVertices, maxVertices);
 
-          pg.translate(ix, iy);
+          PVector stainPosition = new PVector(context.randomGaussian() * size, context.randomGaussian() * size);
+
+          ArrayList<PVector> vertices = new ArrayList<>();
+          for (int i = 0; i < vertsNumber; i++) {
+            float angle    = TWO_PI / vertsNumber * i;
+            float radius   = size / 2 * randomness;
+            PVector vertex = new PVector(context.cos(angle) * radius, context.sin(angle) * radius);
+            vertex.add(
+                     context.randomGaussian() * radius / 10,
+                     context.randomGaussian() * radius / 10);
+            vertices.add(vertex);
+          }
+
+          pg.translate(stainPosition.x, stainPosition.y);
           pg.fill(grayscale, mappedAlpha);
           pg.beginShape();
 
-          float step = TWO_PI / context.random(minVertices, maxVertices);
-          float a = 0;
+          for (PVector v : vertices) { pg.curveVertex(v.x, v.y); }
+          for (int i = 0; i < 4; i++) { pg.curveVertex(vertices.get(i).x, vertices.get(i).y); }
 
-          pg.curveVertex(context.cos(a) * size, context.sin(a) * size);
-          for (; a < TWO_PI; a += step) {
-            float rx = context.randomGaussian() * size / 5;
-            float ry = context.randomGaussian() * size / 5;
-
-            float posx = rx + context.cos(a) * size;
-            float posy = ry + context.sin(a) * size;
-
-            pg.curveVertex(posx, posy);
-          }
-          pg.curveVertex(context.cos(a) * size, context.sin(a) * size);
-
-          pg.endShape(context.CLOSE);
+          pg.endShape();
         }
 
         pg.popMatrix();
@@ -237,11 +242,11 @@ public class Texturizer extends VanityBehaviour {
   }
 
   public void addSetting (int mode, String setting, float value) {
-    settings.add(String.join(MODES[modeToIndex(mode)], "_", setting), value);
+    settings.add(String.join("_", MODES[modeToIndex(mode)], setting), value);
   }
 
   public void removeSetting (int mode, String setting) {
-    settings.remove(String.join(MODES[modeToIndex(mode)], "_", setting));
+    settings.remove(String.join("_", MODES[modeToIndex(mode)], setting));
   }
 
   private int modeToIndex (int mode) {

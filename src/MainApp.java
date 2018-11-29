@@ -21,13 +21,17 @@ public class MainApp extends VanityApplet {
 
     addPalette("test","256eff-46237a-3ddc97-fcfcfc-ff495c");
     // choosePalette("test"); // Not necessary since we only have one, it sets automatically
-    addTexture(Texturizer.FIBERS);
-    addTextureSetting(Texturizer.FIBERS, "alpha", 40);
+    addTexture(Texturizer.CLOUDS);
+    addTexture(Texturizer.STAINS);
+    addTextureSetting(Texturizer.STAINS, "alpha", 50);
   }
 
   public void setup() {
     init();
+    generate();
+  }
 
+  public void generate () {
     background(0);
     debugPalette();
     texturize();
@@ -35,5 +39,9 @@ public class MainApp extends VanityApplet {
   }
 
   public void draw () {
+  }
+
+  public void keyPressed () {
+    if (key == 'g') generate();
   }
 }
