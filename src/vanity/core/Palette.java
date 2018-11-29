@@ -4,7 +4,7 @@ import processing.core.PApplet;
 
 import java.util.Arrays;
 
-public class Palette extends ProcessingEntity {
+public class Palette extends VanityEntity {
   public enum Harmony { Monochromatic, Analogous, Complementary, Triads };
 
   public enum LerpMode { Linear, Log, Exp };

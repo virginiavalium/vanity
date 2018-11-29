@@ -6,7 +6,7 @@ import processing.core.PApplet;
 import java.io.File;
 import java.util.Date;
 
-public class Saver extends ProcessingBehaviour {
+public class Saver extends VanityBehaviour {
   public static final String DEFAULT_FOLDER    = "generated";
   public static final String DEFAULT_EXTENSION = ".tif";
   public static final String DEFAULT_PREFIX    = "out";

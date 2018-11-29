@@ -1,11 +1,9 @@
 package vanity.behaviours;
 
 import processing.core.PApplet;
-import processing.core.PVector;
-import vanity.components.Transform;
-import vanity.core.ProcessingBehaviour;
+import vanity.core.VanityBehaviour;
 
-public class LifeBehaviour extends ProcessingBehaviour {
+public class LifeBehaviour extends VanityBehaviour {
 
   public float lifetime;
   public float maxLifetime;

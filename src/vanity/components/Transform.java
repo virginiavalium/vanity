@@ -5,7 +5,7 @@ import vanity.core.*;
 import processing.core.PVector;
 import static processing.core.PApplet.*;
 
-public abstract class Transform extends ProcessingComponent {
+public abstract class Transform extends VanityComponent {
   public PVector position = new PVector(0, 0, 0);
   public PVector scale = new PVector(1, 1, 1);
 
@@ -14,17 +14,17 @@ public abstract class Transform extends ProcessingComponent {
   /**
    * Constructors
    */
-  public Transform (ProcessingBehaviour parent) {
+  public Transform (VanityBehaviour parent) {
     super(parent);
   }
 
-  public Transform (ProcessingBehaviour parent, PVector position) {
+  public Transform (VanityBehaviour parent, PVector position) {
     super(parent);
     this.position = position.copy();
     updatePositionShortcuts();
   }
 
-  public Transform (ProcessingBehaviour parent, PVector position, PVector scale) {
+  public Transform (VanityBehaviour parent, PVector position, PVector scale) {
     super(parent);
     this.position = position.copy();
     this.scale = scale.copy();

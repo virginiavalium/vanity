@@ -2,10 +2,10 @@ package vanity.behaviours;
 
 import processing.core.PApplet;
 import processing.core.PVector;
-import vanity.core.ProcessingBehaviour;
+import vanity.core.VanityBehaviour;
 import vanity.components.Transform;
 
-public abstract class MovementBehaviour extends ProcessingBehaviour {
+public abstract class MovementBehaviour extends VanityBehaviour {
 
   public Transform transform;
   public PVector direction;

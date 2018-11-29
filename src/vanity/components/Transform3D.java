@@ -1,6 +1,6 @@
 package vanity.components;
 
-import vanity.core.ProcessingBehaviour;
+import vanity.core.VanityBehaviour;
 import processing.core.PVector;
 
 public class Transform3D extends Transform {
@@ -10,15 +10,15 @@ public class Transform3D extends Transform {
    * Constructors
    */
 
-  public Transform3D (ProcessingBehaviour parent) {
+  public Transform3D (VanityBehaviour parent) {
     super(parent);
   }
 
-  public Transform3D (ProcessingBehaviour parent, PVector position) {
+  public Transform3D (VanityBehaviour parent, PVector position) {
     super(parent, position);
   }
 
-  public Transform3D (ProcessingBehaviour parent, PVector position, PVector scale) {
+  public Transform3D (VanityBehaviour parent, PVector position, PVector scale) {
     super(parent, position, scale);
   }
 

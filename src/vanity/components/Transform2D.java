@@ -1,6 +1,6 @@
 package vanity.components;
 
-import vanity.core.ProcessingBehaviour;
+import vanity.core.VanityBehaviour;
 
 import processing.core.PVector;
 import static processing.core.PApplet.radians;
@@ -12,29 +12,29 @@ public class Transform2D extends Transform {
    * Constructors
    */
 
-  public Transform2D (ProcessingBehaviour parent) {
+  public Transform2D (VanityBehaviour parent) {
     super(parent);
   }
 
-  public Transform2D (ProcessingBehaviour parent, float rotation) {
+  public Transform2D (VanityBehaviour parent, float rotation) {
     super(parent);
     this.rotation = rotation;
   }
 
-  public Transform2D (ProcessingBehaviour parent, PVector position) {
+  public Transform2D (VanityBehaviour parent, PVector position) {
     super(parent, position);
   }
 
-  public Transform2D (ProcessingBehaviour parent, PVector position, float rotation) {
+  public Transform2D (VanityBehaviour parent, PVector position, float rotation) {
     super(parent, position);
     this.rotation = rotation;
   }
 
-  public Transform2D (ProcessingBehaviour parent, PVector position, PVector scale) {
+  public Transform2D (VanityBehaviour parent, PVector position, PVector scale) {
     super(parent, position, scale);
   }
 
-  public Transform2D (ProcessingBehaviour parent, PVector position, PVector scale, float rotation) {
+  public Transform2D (VanityBehaviour parent, PVector position, PVector scale, float rotation) {
     super(parent, position, scale);
     this.rotation = rotation;
   }

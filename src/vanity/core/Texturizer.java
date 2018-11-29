@@ -6,7 +6,7 @@ import processing.data.FloatDict;
 
 import static processing.core.PConstants.TWO_PI;
 
-public class Texturizer extends ProcessingBehaviour {
+public class Texturizer extends VanityBehaviour {
 
   private PGraphics pg;
   private FloatDict settings;
