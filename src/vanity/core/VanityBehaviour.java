@@ -1,10 +1,8 @@
 package vanity.core;
 
-import processing.core.PApplet;
-
 public abstract class VanityBehaviour extends VanityEntity {
 
-  public VanityBehaviour (PApplet context) {
+  public VanityBehaviour (VanityApplet context) {
     super(context);
   }
 

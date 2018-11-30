@@ -1,8 +1,5 @@
 package vanity.core;
 
-
-import processing.core.PApplet;
-
 import java.io.File;
 import java.util.Date;
 
@@ -11,7 +8,7 @@ public class Saver extends VanityBehaviour {
   public static final String DEFAULT_EXTENSION = ".tif";
   public static final String DEFAULT_PREFIX    = "out";
 
-  public Saver (PApplet context) {
+  public Saver (VanityApplet context) {
     super(context);
   }
 

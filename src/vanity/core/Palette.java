@@ -29,19 +29,19 @@ public class Palette extends VanityEntity {
    * Constructors
    */
 
-  public Palette (PApplet context, int[] colors) {
+  public Palette (VanityApplet context, int[] colors) {
     super(context);
 
     this.colors = colors;
   }
 
-  public Palette (PApplet context, Color[] colors) {
+  public Palette (VanityApplet context, Color[] colors) {
     super(context);
 
     this.colors = Color.toIntArray(colors);
   }
 
-  public Palette (PApplet context, String colors) {
+  public Palette (VanityApplet context, String colors) {
     super(context);
 
     String[] hexColors = colors.split("-");
@@ -50,7 +50,7 @@ public class Palette extends VanityEntity {
     for (int i = 0; i < hexColors.length; i++) { this.colors[i] = context.unhex("FF" + hexColors[i]); }
   }
 
-  public Palette (PApplet context, String colors, LerpMode mode) {
+  public Palette (VanityApplet context, String colors, LerpMode mode) {
     super(context);
 
     String[] hexColors = colors.split("-");
@@ -61,14 +61,14 @@ public class Palette extends VanityEntity {
     this.lerpMode = mode;
   }
 
-  public Palette (PApplet context, int[] colors, LerpMode mode) {
+  public Palette (VanityApplet context, int[] colors, LerpMode mode) {
     super(context);
 
     this.colors = colors;
     this.lerpMode = mode;
   }
 
-  public Palette (PApplet context, Color[] colors, LerpMode mode) {
+  public Palette (VanityApplet context, Color[] colors, LerpMode mode) {
     super(context);
 
     this.colors = Color.toIntArray(colors);
@@ -78,7 +78,7 @@ public class Palette extends VanityEntity {
 
   /* Create palette from base color */
 
-  public Palette (PApplet context, int baseColor, int size, Harmony harmony) {
+  public Palette (VanityApplet context, int baseColor, int size, Harmony harmony) {
     super(context);
     this.baseColor = baseColor;
     this.colors = new int[size];
@@ -87,7 +87,7 @@ public class Palette extends VanityEntity {
     }
   }
 
-  public Palette (PApplet context, Color baseColor, int size, Harmony harmony) {
+  public Palette (VanityApplet context, Color baseColor, int size, Harmony harmony) {
     super(context);
     this.baseColor = baseColor.getRGB();
     this.colors = new int[size];
@@ -96,7 +96,7 @@ public class Palette extends VanityEntity {
     }
   }
 
-  public Palette (PApplet context, String baseColor, int size, Harmony harmony) {
+  public Palette (VanityApplet context, String baseColor, int size, Harmony harmony) {
     super(context);
 
     this.baseColor = Color.decode(baseColor).getRGB();

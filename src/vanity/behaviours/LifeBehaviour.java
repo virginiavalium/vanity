@@ -1,6 +1,7 @@
 package vanity.behaviours;
 
 import processing.core.PApplet;
+import vanity.core.VanityApplet;
 import vanity.core.VanityBehaviour;
 
 public class LifeBehaviour extends VanityBehaviour {
@@ -8,7 +9,7 @@ public class LifeBehaviour extends VanityBehaviour {
   public float lifetime;
   public float maxLifetime;
 
-  public LifeBehaviour (PApplet context, float maxLifetime) {
+  public LifeBehaviour (VanityApplet context, float maxLifetime) {
     super(context);
     this.maxLifetime = maxLifetime;
   }

@@ -1,13 +1,11 @@
 package vanity.core;
 
-import processing.core.PApplet;
-
 public abstract class VanityEntity {
-  protected PApplet context;
+  protected VanityApplet context;
 
-  public VanityEntity (PApplet context) {
+  public VanityEntity (VanityApplet context) {
     this.context = context;
   }
 
-  public PApplet getContext() { return context; }
+  public VanityApplet getContext() { return context; }
 }

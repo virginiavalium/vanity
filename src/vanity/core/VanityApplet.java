@@ -6,6 +6,8 @@ import processing.data.FloatDict;
 import java.util.HashMap;
 
 public abstract class VanityApplet extends PApplet {
+  public static boolean DEBUG = false;
+
   private Saver saver;
 
   private HashMap<String, Palette> palettes;
@@ -80,4 +82,8 @@ public abstract class VanityApplet extends PApplet {
     saver.save(filename, extension);
   }
 
+
+  public void translateToCenter () {
+    translate(width / 2.0f, height / 2.0f);
+  }
 }

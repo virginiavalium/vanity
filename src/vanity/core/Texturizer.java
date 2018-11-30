@@ -1,11 +1,9 @@
 package vanity.core;
 
-import processing.core.PApplet;
 import processing.core.PGraphics;
 import processing.core.PVector;
 import processing.data.FloatDict;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import static processing.core.PConstants.TWO_PI;
@@ -15,7 +13,7 @@ public class Texturizer extends VanityBehaviour {
   private PGraphics pg;
   private FloatDict settings;
 
-  private int mode = 0;
+  private int mode;
 
   private static final String[] MODES = new String[] { "grain", "clouds", "stains", "fibers" };
 
@@ -28,7 +26,7 @@ public class Texturizer extends VanityBehaviour {
   private static final int   DEFAULT_MODE = 0;
 
 
-  public Texturizer(PApplet context) {
+  public Texturizer(VanityApplet context) {
     super(context);
 
     this.mode = DEFAULT_MODE;
@@ -37,7 +35,7 @@ public class Texturizer extends VanityBehaviour {
     pg = context.createGraphics(context.width, context.height);
   }
 
-  public Texturizer(PApplet context, int mode) {
+  public Texturizer(VanityApplet context, int mode) {
     super(context);
 
     this.mode = mode;
@@ -46,7 +44,7 @@ public class Texturizer extends VanityBehaviour {
     pg = context.createGraphics(context.width, context.height);
   }
 
-  public Texturizer(PApplet context, FloatDict settings) {
+  public Texturizer(VanityApplet context, FloatDict settings) {
     super(context);
 
     this.mode = DEFAULT_MODE;
@@ -55,7 +53,7 @@ public class Texturizer extends VanityBehaviour {
     pg = context.createGraphics(context.width, context.height);
   }
 
-  public Texturizer(PApplet context, int mode, FloatDict settings) {
+  public Texturizer(VanityApplet context, int mode, FloatDict settings) {
     super(context);
 
     this.mode = mode;
@@ -108,29 +106,29 @@ public class Texturizer extends VanityBehaviour {
 
   private void texturizeStains () {
     float alpha     = settings.get("stains_alpha", DEFAULT_ALPHA);
-    float count     = settings.get("stains_count", 5f);
-    float remaining = settings.get("stains_count", 5f);
-    float scale     = settings.get("stains_scale", pg.height / 5f);
-    float minStainsPerGroup  = settings.get("stains_minparts", 1f);
-    float maxStainsPerGroup  = settings.get("stains_maxparts", 5f);
-    float grayscale = settings.get("stains_grayscale", 0f);
+    float count     = settings.get("stains_count", 5.0f);
+    float remaining = settings.get("stains_count", 5.0f);
+    float scale     = settings.get("stains_scale", pg.height / 5.0f);
+    float minStainsPerGroup  = settings.get("stains_minparts", 1.0f);
+    float maxStainsPerGroup  = settings.get("stains_maxparts", 5.0f);
+    float grayscale = settings.get("stains_grayscale", 0.0f);
 
-    float minVertices  = settings.get("stains_minverts", 6f);
-    float maxVertices  = settings.get("stains_maxverts", 18f);
+    float minVertices  = settings.get("stains_minverts", 6.0f);
+    float maxVertices  = settings.get("stains_maxverts", 18.0f);
 
-    float padding = settings.get("stains_padding", pg.height / 50);
+    float padding = settings.get("stains_padding", pg.height / 50.0f);
 
-    float minDistance = settings.get("stains_mindistance", pg.height / 10);
+    float minDistance = settings.get("stains_mindistance", pg.height / 10.0f);
 
-    float randomness = settings.get("stains_randomness", 0.2f);
+    float randomnessSmoothing = settings.get("stains_randomness", 10.0f);
 
     PVector lastGroupCenter = new PVector();
 
     pg.noStroke();
 
     while (remaining > 0) {
-      PVector groupCenter = new PVector(context.random(-pg.width  / 2 - padding, pg.width  / 2 - padding),
-                                        context.random(-pg.height / 2 - padding, pg.height / 2 - padding));
+      PVector groupCenter = new PVector(context.random(-pg.width  / 2.0f - padding, pg.width  / 2.0f - padding),
+                                        context.random(-pg.height / 2.0f - padding, pg.height / 2.0f - padding));
 
       boolean firstStainGroup = remaining == count;
       boolean distanceOk      = context.dist(lastGroupCenter.x, lastGroupCenter.y, groupCenter.x, groupCenter.y) > minDistance;
@@ -145,8 +143,8 @@ public class Texturizer extends VanityBehaviour {
         int stainsInGroup = (int) context.random(minStainsPerGroup, maxStainsPerGroup);
 
         for (int stain = 0; stain < stainsInGroup; stain++) {
-          float size        = context.random(1, 3) * (stain == 0 ? scale : scale / 5);
-          float mappedAlpha = context.map(size, 1, scale * 3, 2, alpha);
+          float size        = context.random(1.0f, 3.0f) * (stain == 0 ? scale : scale / 5.0f);
+          float mappedAlpha = context.map(size, 1.0f, scale * 3.0f, 2.0f, alpha);
 
           int vertsNumber = (int) context.random(minVertices, maxVertices);
 
@@ -155,11 +153,11 @@ public class Texturizer extends VanityBehaviour {
           ArrayList<PVector> vertices = new ArrayList<>();
           for (int i = 0; i < vertsNumber; i++) {
             float angle    = TWO_PI / vertsNumber * i;
-            float radius   = size / 2 * randomness;
+            float radius   = size / 2.0f * (1 / randomnessSmoothing);
             PVector vertex = new PVector(context.cos(angle) * radius, context.sin(angle) * radius);
             vertex.add(
-                     context.randomGaussian() * radius / 10,
-                     context.randomGaussian() * radius / 10);
+                    context.randomGaussian() * radius / randomnessSmoothing,
+                    context.randomGaussian() * radius / randomnessSmoothing);
             vertices.add(vertex);
           }
 
@@ -192,7 +190,7 @@ public class Texturizer extends VanityBehaviour {
 
     for (int x = 0; x < pg.width; x += context.random(minStep, maxStep)) {
       for (int y = 0; y < pg.height; y += context.random(minStep, maxStep)) {
-        if (Utils.chance(85)) {
+        if (RandomUtils.chance(85)) {
           float positionX = x;
           float positionY = y;
           float iterations = context.random(5);
@@ -203,7 +201,7 @@ public class Texturizer extends VanityBehaviour {
 
           for (int i = 0; i < iterations; i++) {
             int original     = context.get(x, y);
-            int blackOrWhite = context.color(Utils.chance(50) ? 0 : 255); // TODO refactor into method in Utils
+            int blackOrWhite = context.color(RandomUtils.chance(50) ? 0 : 255); // TODO refactor into method in RandomUtils
             pg.stroke(context.lerpColor(original, blackOrWhite, context.random(.3f, .7f)), alpha);
             float noiseValue = offset + context.noise(positionX / scale, positionY / scale) * TWO_PI;
             float noiseX = positionX + context.cos(noiseValue) * size;
